@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivan He | Portfolio</title>
     <style>
-        /* Base Theme mirroring the clean, dark aesthetic */
+        /* Base Theme */
         body { 
             margin: 0; 
             padding: 0; 
@@ -19,12 +19,12 @@
         a { color: #e0e0e0; text-decoration: none; transition: color 0.2s ease; }
         a:hover { color: #888; }
         
-        /* Fixed Sidebar Navigation */
+        /* Fixed Sidebar Navigation - SLIMMER WIDTH */
         .sidebar {
-            width: 320px;
+            width: 240px; /* Reduced from 320px */
             position: fixed;
             height: 100vh;
-            padding: 4rem 3rem;
+            padding: 4rem 2.5rem;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -35,34 +35,53 @@
         .sidebar .location { margin: 0 0 2.5rem 0; color: #a0a0a0; font-size: 0.95rem; }
         
         .nav { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
-        .nav a { font-size: 1rem; color: #666; font-weight: 500; }
+        .nav a { font-size: 0.95rem; color: #666; font-weight: 500; }
         .nav a:hover, .nav a:active { color: #e0e0e0; }
         
-        .social-links { display: flex; gap: 1.5rem; font-size: 0.9rem; margin-top: auto; }
+        /* Social Links - STACKED VERTICALLY */
+        .social-links { 
+            display: flex; 
+            flex-direction: column; /* Changed from row to column */
+            gap: 1rem; 
+            font-size: 0.9rem; 
+            margin-top: auto; 
+        }
         
         /* Main Scrolling Content */
         .main-content {
-            margin-left: 320px; /* Offset by sidebar width */
+            margin-left: 240px; /* Matched to new sidebar width */
             padding: 4rem;
             max-width: 800px;
             width: 100%;
             box-sizing: border-box;
         }
         
-        section { margin-bottom: 5rem; scroll-margin-top: 4rem; }
+        /* Section Separation */
+        section { 
+            margin-bottom: 4rem; 
+            scroll-margin-top: 4rem; 
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle divider line */
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
         
         h2 { 
             font-size: 1.2rem; 
             font-weight: 600; 
-            margin-bottom: 2rem; 
+            margin-bottom: 2.5rem; 
             color: #fff;
             letter-spacing: -0.5px;
         }
         
         p { line-height: 1.7; color: #a0a0a0; margin-bottom: 1.5rem; font-size: 0.95rem; }
         
-        /* Item Cards (Projects & Experience) */
+        /* Item Cards */
         .item-card { margin-bottom: 2.5rem; }
+        .item-card:last-child { margin-bottom: 0; }
         .item-header { 
             display: flex; 
             justify-content: space-between; 
@@ -89,7 +108,7 @@
         @media (max-width: 768px) {
             body { flex-direction: column; }
             .sidebar { width: 100%; position: relative; height: auto; padding: 2.5rem; }
-            .sidebar .social-links { margin-top: 2rem; }
+            .sidebar .social-links { margin-top: 2rem; flex-direction: row; flex-wrap: wrap; } /* Keep side-by-side on very small screens to save space */
             .main-content { margin-left: 0; padding: 2.5rem; }
         }
     </style>
@@ -104,7 +123,9 @@
             
             <nav class="nav">
                 <a href="#about">about</a>
+                <a href="#education">education</a>
                 <a href="#experience">experience</a>
+                <a href="#certificates">certificates</a>
                 <a href="#projects">projects</a>
             </nav>
         </div>
@@ -133,8 +154,8 @@
             </div>
         </section>
 
-        <section id="experience">
-            <h2>experience & education</h2>
+        <section id="education">
+            <h2>education</h2>
             
             <div class="item-card">
                 <div class="item-header">
@@ -142,8 +163,13 @@
                     <span class="item-date">Expected Apr 2028</span>
                 </div>
                 <p class="item-subtitle">Bachelor of Management in Computer Science (Co-operative Education)</p>
+                <p>Currently maintaining a 3.21 cumulative GPA.</p>
             </div>
+        </section>
 
+        <section id="experience">
+            <h2>experience</h2>
+            
             <div class="item-card">
                 <div class="item-header">
                     <h3>Career Fair Assistant</h3>
@@ -152,6 +178,10 @@
                 <p class="item-subtitle">University of Lethbridge</p>
                 <p>Assisted in coordinating university events, streamlining communication between students, staff, and visiting organizations.</p>
             </div>
+        </section>
+
+        <section id="certificates">
+            <h2>certificates</h2>
             
             <div class="item-card">
                 <div class="item-header">
@@ -199,6 +229,7 @@
                 <div class="tech-tags">
                     <span class="tech-tag">Wix</span>
                     <span class="tech-tag">Photoshop</span>
+                    <span class="tech-tag">Canva</span>
                 </div>
             </div>
 
