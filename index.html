@@ -7,7 +7,7 @@
     <style>
         /* Base Theme */
         html {
-            scroll-behavior: smooth; /* Makes clicking the top links smoothly glide down the page */
+            scroll-behavior: smooth; 
         }
         
         body { 
@@ -28,15 +28,15 @@
             left: 0;
             width: 100%;
             height: 70px;
-            background: rgba(15, 15, 15, 0.85); /* Semi-transparent background */
-            backdrop-filter: blur(10px); /* Gives that modern frosted glass effect */
+            background: rgba(15, 15, 15, 0.85); 
+            backdrop-filter: blur(10px); 
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 4rem;
             box-sizing: border-box;
-            z-index: 1000; /* Keeps it on top of other content */
+            z-index: 1000; 
         }
         
         .topbar .name { font-size: 1.3rem; font-weight: 600; margin: 0; letter-spacing: -0.5px; }
@@ -51,7 +51,7 @@
         
         /* Main Content - Centered under topbar */
         .main-content {
-            margin: 100px auto 0 auto; /* Pushes content down so it's not hidden behind the topbar */
+            margin: 100px auto 0 auto; 
             padding: 2rem;
             max-width: 800px;
             width: 100%;
@@ -61,7 +61,7 @@
         /* Section Separation */
         section { 
             margin-bottom: 4rem; 
-            scroll-margin-top: 100px; /* Ensures the topbar doesn't cover the title when you click a link */
+            scroll-margin-top: 100px; 
             padding-bottom: 4rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -90,7 +90,7 @@
             align-items: center;
             color: #555;
             font-size: 0.8rem;
-            overflow: hidden; /* Keeps the image inside the circle */
+            overflow: hidden; 
         }
         
         .profile-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
@@ -122,9 +122,22 @@
         .item-subtitle { color: #888; font-size: 0.9rem; margin-top: 0.2rem; margin-bottom: 0.8rem; }
         .item-card p { margin-bottom: 1rem; }
 
-        /* Minimalist Tags */
+        /* Skills Styling */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .skill-category h3 {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
         .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tech-tag { background: #1a1a1a; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; color: #888; border: 1px solid #222; }
+        .tech-tag { background: #1a1a1a; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; color: #a0a0a0; border: 1px solid #222; }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -140,10 +153,11 @@
 <body>
 
     <header class="topbar">
-        <h1 class="name">ivan he</h1>
+        <h1 class="name">Ivan He</h1>
         <div class="nav-container">
             <nav class="nav">
                 <a href="#about">about</a>
+                <a href="#skills">skills</a>
                 <a href="#education">education</a>
                 <a href="#experience">experience</a>
                 <a href="#projects">projects</a>
@@ -161,8 +175,6 @@
         <section id="about">
             <h2>about</h2>
             <div class="about-grid">
-                <!-- Replace the text inside with an actual image tag like this: -->
-                <!-- <div class="profile-img-placeholder"><img src="your-photo.jpg" alt="Ivan He"></div> -->
                 <div class="profile-img-placeholder">
                     [Place Profile Image Here]
                 </div>
@@ -170,14 +182,32 @@
                 <div>
                     <p>I'm a Computer Science student at the University of Lethbridge pursuing my Bachelor of Management in Computer Science. My academic focus bridges software development, algorithm design, and system optimization.</p>
                     
-                    <p>My technical work spans multiple languages including C++, Python, and Java, alongside frontend tools like HTML/CSS. I am eager to learn the fundamentals of PC architecture and how custom systems are built, while continuing to push boundaries in application logic.</p>
-                    
-                    <div class="tech-tags" style="margin-top: 2rem;">
+                    <p>My technical work spans multiple languages including C++, Python, and Java, alongside frontend tools like HTML/CSS. Outside of pure coding, I am a passionate gamer with a strong interest in understanding the mechanics, logic, and development processes behind the games I play, while continually pushing boundaries in application logic and efficiency.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>technical skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages & Web</h3>
+                    <div class="tech-tags">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">C++</span>
                         <span class="tech-tag">Java</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">Algorithms</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Concepts & Tools</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Algorithm Design</span>
+                        <span class="tech-tag">Dynamic Programming</span>
+                        <span class="tech-tag">Pathfinding Optimization</span>
+                        <span class="tech-tag">Data Simulation</span>
+                        <span class="tech-tag">Photoshop</span>
                     </div>
                 </div>
             </div>
@@ -222,7 +252,6 @@
             <h2>projects</h2>
             
             <div class="item-card">
-                <!-- Project Image Placeholder -->
                 <div class="project-img-placeholder">
                     [Place App/Code Screenshot Here]
                 </div>
