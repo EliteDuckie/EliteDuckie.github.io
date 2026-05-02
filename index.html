@@ -3,52 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Portfolio</title>
+    <title>EliteDuckie | Portfolio</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; background-color: #f6f8fa; }
-        header { border-bottom: 2px solid #eaecef; padding-bottom: 1rem; margin-bottom: 2rem; }
-        h1 { margin: 0; color: #24292e; }
-        .tagline { color: #586069; font-size: 1.2rem; }
-        section { background: white; padding: 1.5rem; border-radius: 6px; border: 1px solid #d1d5da; margin-bottom: 1.5rem; }
-        h2 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3rem; }
-        ul { padding-left: 1.2rem; }
-        .skills span { background: #0366d6; color: white; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.85rem; margin-right: 0.5rem; display: inline-block; margin-bottom: 0.5rem; }
+        :root {
+            --bg-color: #0d1117;
+            --sidebar-color: #161b22;
+            --text-main: #c9d1d9;
+            --accent-blue: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        nav {
+            width: 250px;
+            background-color: var(--sidebar-color);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            height: 100%;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        nav a {
+            display: block;
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--border-color);
+            color: var(--accent-blue);
+        }
+
+        /* Main Content Area */
+        main {
+            margin-left: 250px; /* Same as sidebar width */
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 2rem;
+        }
+
+        h2 {
+            color: var(--accent-blue);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #21262d;
+            border: 1px solid var(--border-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0.3rem;
+        }
+
+        .project-card {
+            background: var(--sidebar-color);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            nav { width: 100%; position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); }
+            main { margin-left: 0; padding: 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Your Name</h1>
-        <p class="tagline">Computer Science Student & Aspiring Developer</p>
-    </header>
+    <nav>
+        <h1>EliteDuckie</h1>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <section>
-        <h2>About Me</h2>
-        <p>I am a CS student at the University of Lethbridge with a focus on algorithm design and system optimization. I enjoy solving complex logic puzzles and am currently expanding my knowledge of computer hardware and system upgrades.</p>
-    </section>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a Computer Science student at the University of Lethbridge with a passion for building software and exploring hardware. Currently focused on algorithm optimization and web development.</p>
+        </section>
 
-    <section>
-        <h2>Technical Interests</h2>
-        <div class="skills">
-            <span>Python</span>
-            <span>Dynamic Programming</span>
-            <span>Algorithms</span>
-            <span>PC Architecture</span>
-            <span>Linux/Terminal</span>
-        </div>
-    </section>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">C++</div>
+            <div class="skill-tag">Java</div>
+            <div class="skill-tag">Web Design</div>
+            <div class="skill-tag">PC Hardware</div>
+        </section>
 
-    <section>
-        <h2>Current Projects</h2>
-        <ul>
-            <li><strong>Algorithm Implementations:</strong> Exploring Floyd-Warshall and Knapsack problem optimizations.</li>
-            <li><strong>Hardware Learning:</strong> Transitioning from laptop-based work to understanding custom PC builds.</li>
-        </ul>
-    </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Pathfinding Optimization</h3>
+                <p>Implemented Bidirectional Dijkstra’s Algorithm in C++ to find the most efficient routes in large datasets.</p>
+            </div>
+            <div class="project-card">
+                <h3>Blackjack Probability Sim</h3>
+                <p>A Python-based simulation used to model mathematical patterns in card games.</p>
+            </div>
+        </section>
 
-    <footer>
-        <p><a href="https://github.com/your-username">Check out my GitHub</a></p>
-    </footer>
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Always open to collaborating on coding projects or discussing the latest PC hardware tech.</p>
+            <p><a href="https://github.com/EliteDuckie" style="color: var(--accent-blue);">My GitHub Profile</a></p>
+        </section>
+    </main>
 
 </body>
 </html>
