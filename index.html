@@ -6,51 +6,53 @@
     <title>Ivan He | Portfolio</title>
     <style>
         /* Base Theme */
+        html {
+            scroll-behavior: smooth; /* Makes clicking the top links smoothly glide down the page */
+        }
+        
         body { 
             margin: 0; 
             padding: 0; 
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
             background-color: #0f0f0f; 
             color: #e0e0e0; 
-            display: flex;
-            min-height: 100vh;
         }
         
         a { color: #e0e0e0; text-decoration: none; transition: color 0.2s ease; }
         a:hover { color: #888; }
         
-        /* Fixed Sidebar Navigation - SLIMMER WIDTH */
-        .sidebar {
-            width: 240px; /* Reduced from 320px */
+        /* Fixed Top Navigation */
+        .topbar {
             position: fixed;
-            height: 100vh;
-            padding: 4rem 2.5rem;
-            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(15, 15, 15, 0.85); /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Gives that modern frosted glass effect */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4rem;
+            box-sizing: border-box;
+            z-index: 1000; /* Keeps it on top of other content */
         }
         
-        .sidebar .name { margin: 0 0 0.5rem 0; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.5px; }
-        .sidebar .title { margin: 0; color: #a0a0a0; font-size: 0.95rem; }
-        .sidebar .location { margin: 0 0 2.5rem 0; color: #a0a0a0; font-size: 0.95rem; }
+        .topbar .name { font-size: 1.3rem; font-weight: 600; margin: 0; letter-spacing: -0.5px; }
         
-        .nav { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
-        .nav a { font-size: 0.95rem; color: #666; font-weight: 500; }
-        .nav a:hover, .nav a:active { color: #e0e0e0; }
+        .nav-container { display: flex; align-items: center; gap: 3rem; }
         
-        /* Social Links - STACKED VERTICALLY */
-        .social-links { 
-            display: flex; 
-            flex-direction: column; /* Changed from row to column */
-            gap: 1rem; 
-            font-size: 0.9rem; 
-            margin-top: auto; 
-        }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { font-size: 0.95rem; color: #a0a0a0; font-weight: 500; }
+        .nav a:hover, .nav a:active { color: #fff; }
         
-        /* Main Scrolling Content */
+        .social-links { display: flex; gap: 1.5rem; font-size: 0.9rem; }
+        
+        /* Main Content - Centered under topbar */
         .main-content {
-            margin-left: 240px; /* Matched to new sidebar width */
-            padding: 4rem;
+            margin: 100px auto 0 auto; /* Pushes content down so it's not hidden behind the topbar */
+            padding: 2rem;
             max-width: 800px;
             width: 100%;
             box-sizing: border-box;
@@ -59,35 +61,62 @@
         /* Section Separation */
         section { 
             margin-bottom: 4rem; 
-            scroll-margin-top: 4rem; 
+            scroll-margin-top: 100px; /* Ensures the topbar doesn't cover the title when you click a link */
             padding-bottom: 4rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle divider line */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        section:last-of-type {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
+        section:last-of-type { border-bottom: none; padding-bottom: 0; }
         
-        h2 { 
-            font-size: 1.2rem; 
-            font-weight: 600; 
-            margin-bottom: 2.5rem; 
-            color: #fff;
-            letter-spacing: -0.5px;
-        }
-        
+        h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 2.5rem; color: #fff; letter-spacing: -0.5px; }
         p { line-height: 1.7; color: #a0a0a0; margin-bottom: 1.5rem; font-size: 0.95rem; }
         
-        /* Item Cards */
-        .item-card { margin-bottom: 2.5rem; }
-        .item-card:last-child { margin-bottom: 0; }
-        .item-header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: baseline; 
-            margin-bottom: 0.3rem; 
+        /* About Section Flexbox for Image */
+        .about-grid {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
         }
+        
+        .profile-img-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #1a1a1a;
+            border: 1px dashed #444;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #555;
+            font-size: 0.8rem;
+            overflow: hidden; /* Keeps the image inside the circle */
+        }
+        
+        .profile-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Item Cards (Projects & Experience) */
+        .item-card { margin-bottom: 3.5rem; }
+        .item-card:last-child { margin-bottom: 0; }
+        
+        .project-img-placeholder {
+            width: 100%;
+            height: 250px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            border: 1px dashed #444;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #555;
+            font-size: 0.9rem;
+            overflow: hidden;
+        }
+        
+        .project-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem; }
         .item-header h3 { font-size: 1.05rem; margin: 0; color: #e0e0e0; font-weight: 500; }
         .item-date { color: #666; font-size: 0.85rem; }
         .item-subtitle { color: #888; font-size: 0.9rem; margin-top: 0.2rem; margin-bottom: 0.8rem; }
@@ -95,67 +124,67 @@
 
         /* Minimalist Tags */
         .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tech-tag {
-            background: #1a1a1a;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: #888;
-            border: 1px solid #222;
-        }
+        .tech-tag { background: #1a1a1a; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; color: #888; border: 1px solid #222; }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            body { flex-direction: column; }
-            .sidebar { width: 100%; position: relative; height: auto; padding: 2.5rem; }
-            .sidebar .social-links { margin-top: 2rem; flex-direction: row; flex-wrap: wrap; } /* Keep side-by-side on very small screens to save space */
-            .main-content { margin-left: 0; padding: 2.5rem; }
+            .topbar { padding: 0 1.5rem; flex-direction: column; height: auto; padding-top: 1rem; padding-bottom: 1rem; gap: 1rem; position: relative; }
+            .nav-container { flex-direction: column; gap: 1rem; width: 100%; }
+            .nav { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .main-content { margin-top: 20px; }
+            .about-grid { flex-direction: column; align-items: center; text-align: center; }
+            .item-header { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <aside class="sidebar">
-        <div>
-            <h1 class="name">ivan he</h1>
-            <p class="title">computer science student</p>
-            <p class="location">calgary, canada</p>
-            
+    <header class="topbar">
+        <h1 class="name">ivan he</h1>
+        <div class="nav-container">
             <nav class="nav">
                 <a href="#about">about</a>
                 <a href="#education">education</a>
                 <a href="#experience">experience</a>
-                <a href="#certificates">certificates</a>
                 <a href="#projects">projects</a>
             </nav>
+            <div class="social-links">
+                <a href="https://github.com/EliteDuckie" target="_blank" rel="noopener noreferrer">github</a>
+                <a href="#">linkedin</a>
+                <a href="#">email</a>
+            </div>
         </div>
-        
-        <div class="social-links">
-            <a href="https://github.com/EliteDuckie" target="_blank" rel="noopener noreferrer">github</a>
-            <a href="#">linkedin</a>
-            <a href="#">email</a>
-        </div>
-    </aside>
+    </header>
 
     <main class="main-content">
         
         <section id="about">
             <h2>about</h2>
-            <p>I'm a Computer Science student at the University of Lethbridge (currently based in Calgary) pursuing my Bachelor of Management in Computer Science. My academic focus bridges software development, algorithm design, and system optimization.</p>
-            
-            <p>My technical work spans multiple languages including C++, Python, and Java, alongside frontend tools like HTML/CSS. I am highly interested in the intersection of hardware and software, currently expanding my knowledge on PC architecture and hardware assembly while continuing to push boundaries in application logic.</p>
-            
-            <div class="tech-tags" style="margin-top: 2rem;">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">HTML/CSS</span>
-                <span class="tech-tag">Algorithms</span>
+            <div class="about-grid">
+                <!-- Replace the text inside with an actual image tag like this: -->
+                <!-- <div class="profile-img-placeholder"><img src="your-photo.jpg" alt="Ivan He"></div> -->
+                <div class="profile-img-placeholder">
+                    [Place Profile Image Here]
+                </div>
+                
+                <div>
+                    <p>I'm a Computer Science student at the University of Lethbridge pursuing my Bachelor of Management in Computer Science. My academic focus bridges software development, algorithm design, and system optimization.</p>
+                    
+                    <p>My technical work spans multiple languages including C++, Python, and Java, alongside frontend tools like HTML/CSS. I am eager to learn the fundamentals of PC architecture and how custom systems are built, while continuing to push boundaries in application logic.</p>
+                    
+                    <div class="tech-tags" style="margin-top: 2rem;">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">Algorithms</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="education">
-            <h2>education</h2>
+            <h2>education & certificates</h2>
             
             <div class="item-card">
                 <div class="item-header">
@@ -164,6 +193,15 @@
                 </div>
                 <p class="item-subtitle">Bachelor of Management in Computer Science (Co-operative Education)</p>
                 <p>Currently maintaining a 3.21 cumulative GPA.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <h3>Google IT Support Specialization</h3>
+                    <span class="item-date">Jun 2025</span>
+                </div>
+                <p class="item-subtitle">Coursera</p>
+                <p>Completed comprehensive coursework covering networking, operating systems, system administration, and security fundamentals.</p>
             </div>
         </section>
 
@@ -180,23 +218,15 @@
             </div>
         </section>
 
-        <section id="certificates">
-            <h2>certificates</h2>
-            
-            <div class="item-card">
-                <div class="item-header">
-                    <h3>Google IT Support Specialization</h3>
-                    <span class="item-date">Jun 2025</span>
-                </div>
-                <p class="item-subtitle">Coursera</p>
-                <p>Completed comprehensive coursework covering networking, operating systems, system administration, and security fundamentals.</p>
-            </div>
-        </section>
-
         <section id="projects">
             <h2>projects</h2>
             
             <div class="item-card">
+                <!-- Project Image Placeholder -->
+                <div class="project-img-placeholder">
+                    [Place App/Code Screenshot Here]
+                </div>
+                
                 <div class="item-header">
                     <h3>Pathfinding Optimization</h3>
                     <span class="item-date">2025</span>
@@ -209,6 +239,10 @@
             </div>
 
             <div class="item-card">
+                <div class="project-img-placeholder">
+                    [Place Gallery Screenshot Here]
+                </div>
+                
                 <div class="item-header">
                     <h3>Responsive Online Gallery</h3>
                     <span class="item-date">2023</span>
@@ -219,32 +253,6 @@
                     <span class="tech-tag">CSS</span>
                 </div>
             </div>
-
-            <div class="item-card">
-                <div class="item-header">
-                    <h3>Wine E-commerce Platform</h3>
-                    <span class="item-date">2022</span>
-                </div>
-                <p>Designed and deployed a specialized e-commerce platform for wine listings, integrating custom graphics and user-friendly navigation.</p>
-                <div class="tech-tags">
-                    <span class="tech-tag">Wix</span>
-                    <span class="tech-tag">Photoshop</span>
-                    <span class="tech-tag">Canva</span>
-                </div>
-            </div>
-
-            <div class="item-card">
-                <div class="item-header">
-                    <h3>Blackjack Probability Simulator</h3>
-                    <span class="item-date">2021</span>
-                </div>
-                <p>Programmed a simulation tool in Python to test and model mathematical patterns and probabilities within card games.</p>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Data Simulation</span>
-                </div>
-            </div>
-
         </section>
         
     </main>
