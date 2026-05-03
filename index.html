@@ -68,6 +68,16 @@
         h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 2.5rem; color: #fff; letter-spacing: -0.5px; }
         p { line-height: 1.7; color: #a0a0a0; margin-bottom: 1.5rem; font-size: 0.95rem; }
 
+        /* Profile Photo CSS is Back */
+        .about-grid { display: flex; gap: 3rem; align-items: flex-start; }
+        .profile-img-placeholder {
+            width: 180px; height: 180px; border-radius: 50%;
+            background-color: #1a1a1a; border: 2px dashed #444;
+            flex-shrink: 0; display: flex; justify-content: center; align-items: center;
+            color: #888; font-size: 0.9rem; overflow: hidden;
+        }
+        .profile-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
         /* Item Cards */
         .item-card { margin-bottom: 3.5rem; }
         .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem; }
@@ -75,40 +85,40 @@
         .item-date { color: #666; font-size: 0.85rem; }
         .item-subtitle { color: #888; font-size: 0.9rem; margin-top: 0.2rem; margin-bottom: 0.8rem; }
 
-        /* Clean Image Styling */
+        /* Real Image Styling */
         .cert-img { 
-            width: 100%; 
-            height: auto; 
-            border-radius: 8px; 
-            margin-top: 1.5rem; 
-            border: 1px solid #333; 
-            display: block; /* Fixes alignment bugs */
+            width: 100%; height: auto; border-radius: 8px; margin-top: 1.5rem; 
+            border: 1px solid #333; display: block; 
         }
 
         .logo-img { 
-            width: 100%; /* Makes it responsive */
-            max-width: 250px; 
-            height: auto; 
-            margin-top: 1.5rem; 
-            background-color: #f6f8fa; 
-            padding: 1rem; 
-            border-radius: 8px; 
-            display: block; /* Fixes layout bugs */
-            box-sizing: border-box; /* Stops padding from breaking the width */
-            object-fit: contain;
+            width: 100%; max-width: 250px; height: auto; margin-top: 1.5rem; 
+            background-color: #f6f8fa; padding: 1rem; border-radius: 8px; 
+            display: block; box-sizing: border-box; object-fit: contain;
         }
 
-        /* Tech Section Styling */
+        /* Highlighted Tech Section Styling */
         .skills-container { display: flex; flex-direction: column; gap: 1.5rem; }
         .skill-category h3 { font-size: 0.95rem; color: #888; margin-bottom: 0.8rem; font-weight: 500; }
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tech-tag { background: #1a1a1a; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.85rem; color: #a0a0a0; border: 1px solid #222; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        
+        .tech-tag { 
+            background: rgba(88, 166, 255, 0.1); /* Subtle blue tint */
+            padding: 0.4rem 1rem; 
+            border-radius: 20px; /* Pill shape */
+            font-size: 0.85rem; 
+            color: #58a6ff; /* Bright blue text */
+            border: 1px solid rgba(88, 166, 255, 0.3); /* Bright blue border */
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
 
         @media (max-width: 768px) {
             .topbar { padding: 0 1.5rem; flex-direction: column; height: auto; padding-top: 1rem; padding-bottom: 1rem; gap: 1rem; position: relative; }
             .nav-container { flex-direction: column; gap: 1rem; width: 100%; }
             .nav { flex-wrap: wrap; justify-content: center; gap: 1rem; }
             .main-content { margin-top: 20px; }
+            .about-grid { flex-direction: column; align-items: center; text-align: center; }
             .item-header { flex-direction: column; }
         }
     </style>
@@ -137,10 +147,15 @@
         
         <section id="about">
             <h2>About</h2>
-            <div>
-                <p>I'm a Computer Science student at the University of Lethbridge pursuing my Bachelor of Management in Computer Science. My academic focus bridges software development, algorithm design, and system optimization.</p>
-                <p>My technical work spans multiple languages including C++, Python, and Java, alongside frontend tools like HTML/CSS. Outside of pure coding, I am a passionate gamer with a strong interest in understanding the mechanics, logic, and development processes behind the games I play, while continually pushing boundaries in application logic and efficiency.</p>
-                <p><strong>🎯 Currently seeking an 8-16 month internship starting May 2026.</strong></p>
+            <div class="about-grid">
+                <div class="profile-img-placeholder">
+                    <span>[Place Photo Here]</span>
+                </div>
+                <div>
+                    <p>I'm a Computer Science student at the University of Lethbridge pursuing my Bachelor of Management in Computer Science. My academic focus bridges software development, algorithm design, and system optimization.</p>
+                    <p>My technical work spans multiple languages including C++, Python, and Java, alongside frontend tools like HTML/CSS. Outside of pure coding, I am a passionate gamer with a strong interest in understanding the mechanics, logic, and development processes behind the games I play, while continually pushing boundaries in application logic and efficiency.</p>
+                    <p><strong>🎯 Currently seeking an 8-16 month internship starting May 2026.</strong></p>
+                </div>
             </div>
         </section>
 
@@ -198,6 +213,7 @@
                 </div>
                 <p class="item-subtitle">Bachelor of Management in Computer Science (Co-operative Education)</p>
                 <p>Currently maintaining a 3.21 cumulative GPA.</p>
+                <!-- Double check your file name for this image! -->
                 <img src="UniversityOfLethbridgeLogo.png" alt="University of Lethbridge" class="logo-img">
             </div>
 
@@ -207,7 +223,7 @@
                     <span class="item-date">Jun 2025</span>
                 </div>
                 <p class="item-subtitle">Coursera</p>
-                <p>Completed comprehensive coursework covering networking, operating systems, system administration, and security fundamentals[cite: 3].</p>
+                <p>Completed comprehensive coursework covering networking, operating systems, system administration, and security fundamentals.</p>
                 <img src="Google_IT_Support_Certificate.png" alt="Google IT Support Certificate" class="cert-img">
             </div>
         </section>
@@ -220,7 +236,7 @@
                     <span class="item-date">Jan 2026</span>
                 </div>
                 <p class="item-subtitle">University of Lethbridge</p>
-                <p>Assisted in coordinating university events, streamlining communication between students, staff, and visiting organizations.</p>
+                <p>Assisted in coordinating major university events, acting as a direct liaison between students, faculty, and visiting organizations. Managed event logistics, streamlined communication channels, and provided on-site technical and informational support to ensure seamless execution for hundreds of attendees.</p>
             </div>
         </section>
 
@@ -231,7 +247,7 @@
                     <h3>Pathfinding Optimization</h3>
                     <span class="item-date">2025</span>
                 </div>
-                <p>Engineered a Bidirectional Dijkstra’s Algorithm in C++ that achieved a <strong>78x speed increase</strong> over the base model, heavily optimizing execution time for large-scale mathematical routing.</p>
+                <p>Engineered a Bidirectional Dijkstra’s Algorithm in C++ that achieved a <strong>78x speed increase</strong> over the base model. Designed memory-efficient data structures and rigorously optimized execution time to handle large-scale mathematical routing and complex map datasets.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">C++</span>
                     <span class="tech-tag">Algorithm Design</span>
@@ -243,7 +259,7 @@
                     <h3>Responsive Online Gallery</h3>
                     <span class="item-date">2023</span>
                 </div>
-                <p>Developed a front-end gallery website focusing on modern aesthetic principles and fluid, responsive layouts across devices.</p>
+                <p>Developed a front-end gallery website focusing on modern aesthetic principles and fluid user experiences. Utilized semantic HTML and flexible CSS grid layouts to ensure complete cross-browser compatibility and responsive scaling across mobile, tablet, and desktop devices.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">HTML</span>
                     <span class="tech-tag">CSS</span>
