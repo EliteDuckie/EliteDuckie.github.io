@@ -75,22 +75,27 @@
         .item-date { color: #666; font-size: 0.85rem; }
         .item-subtitle { color: #888; font-size: 0.9rem; margin-top: 0.2rem; margin-bottom: 0.8rem; }
 
-        /* Clean Image Styling (No more dashed boxes) */
+        /* Clean Image Styling */
         .cert-img { 
             width: 100%; 
-            height: auto; /* Lets the image size itself naturally */
+            height: auto; 
             border-radius: 8px; 
             margin-top: 1.5rem; 
-            border: 1px solid #333; /* Just a very subtle solid border */
+            border: 1px solid #333; 
+            display: block; /* Fixes alignment bugs */
         }
 
         .logo-img { 
-            max-width: 250px; /* Keeps the logo from being massive */
+            width: 100%; /* Makes it responsive */
+            max-width: 250px; 
             height: auto; 
             margin-top: 1.5rem; 
-            background-color: #f6f8fa; /* Gives dark logos a light background to be readable */
+            background-color: #f6f8fa; 
             padding: 1rem; 
             border-radius: 8px; 
+            display: block; /* Fixes layout bugs */
+            box-sizing: border-box; /* Stops padding from breaking the width */
+            object-fit: contain;
         }
 
         /* Tech Section Styling */
@@ -135,30 +140,49 @@
             <div>
                 <p>I'm a Computer Science student at the University of Lethbridge pursuing my Bachelor of Management in Computer Science. My academic focus bridges software development, algorithm design, and system optimization.</p>
                 <p>My technical work spans multiple languages including C++, Python, and Java, alongside frontend tools like HTML/CSS. Outside of pure coding, I am a passionate gamer with a strong interest in understanding the mechanics, logic, and development processes behind the games I play, while continually pushing boundaries in application logic and efficiency.</p>
+                <p><strong>🎯 Currently seeking an 8-16 month internship starting May 2026.</strong></p>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Tech</h2>
+            <h2>Tech Stack</h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Languages & Web</h3>
+                    <h3>Languages</h3>
                     <div class="tech-tags">
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">C++</span>
                         <span class="tech-tag">Java</span>
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">C</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">JavaScript</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Core Concepts & Tools</h3>
+                    <h3>IT Support & Infrastructure</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag">Algorithm Design</span>
-                        <span class="tech-tag">Dynamic Programming</span>
-                        <span class="tech-tag">Pathfinding Optimization</span>
-                        <span class="tech-tag">Data Simulation</span>
-                        <span class="tech-tag">Photoshop</span>
+                        <span class="tech-tag">Windows Admin</span>
+                        <span class="tech-tag">PowerShell</span>
+                        <span class="tech-tag">Bash</span>
+                        <span class="tech-tag">Linux</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web & API</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Data</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">GitLab</span>
+                        <span class="tech-tag">VS Code</span>
+                        <span class="tech-tag">Jupyter</span>
+                        <span class="tech-tag">Matplotlib</span>
+                        <span class="tech-tag">MySQL</span>
                     </div>
                 </div>
             </div>
@@ -174,8 +198,6 @@
                 </div>
                 <p class="item-subtitle">Bachelor of Management in Computer Science (Co-operative Education)</p>
                 <p>Currently maintaining a 3.21 cumulative GPA.</p>
-                
-                <!-- UofL Logo uses the new .logo-img class -->
                 <img src="UniversityOfLethbridgeLogo.png" alt="University of Lethbridge" class="logo-img">
             </div>
 
@@ -186,8 +208,6 @@
                 </div>
                 <p class="item-subtitle">Coursera</p>
                 <p>Completed comprehensive coursework covering networking, operating systems, system administration, and security fundamentals[cite: 3].</p>
-                
-                <!-- Certificate uses the new .cert-img class -->
                 <img src="Google_IT_Support_Certificate.png" alt="Google IT Support Certificate" class="cert-img">
             </div>
         </section>
@@ -211,7 +231,7 @@
                     <h3>Pathfinding Optimization</h3>
                     <span class="item-date">2025</span>
                 </div>
-                <p>Engineered an implementation of Bidirectional Dijkstra’s Algorithm in C++ to map and find the most efficient routes, optimizing execution time for large-scale mathematical models.</p>
+                <p>Engineered a Bidirectional Dijkstra’s Algorithm in C++ that achieved a <strong>78x speed increase</strong> over the base model, heavily optimizing execution time for large-scale mathematical routing.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">C++</span>
                     <span class="tech-tag">Algorithm Design</span>
