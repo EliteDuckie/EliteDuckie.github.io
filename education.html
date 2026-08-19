@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivan He | Portfolio</title>
-    <meta name="description" content="Ivan He — Computer Science student at the University of Lethbridge. Algorithms, systems, and IT support.">
+    <title>Education | Ivan He</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
@@ -559,8 +558,8 @@ p{ line-height: 1.75; color: var(--text-muted, #8A96AF); font-size: 0.98rem; mar
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <div class="nav-container">
             <nav class="nav">
-                <a href="index.html" class="active">home</a>
-                <a href="education.html">education</a>
+                <a href="index.html">home</a>
+                <a href="education.html" class="active">education</a>
                 <a href="experience.html">experience</a>
                 <a href="projects.html">projects</a>
             </nav>
@@ -574,147 +573,52 @@ p{ line-height: 1.75; color: var(--text-muted, #8A96AF); font-size: 0.98rem; mar
 
     <main class="main-content">
 
-        <section class="hero" id="top">
-            <div class="hero-copy">
-                <span class="role">Computer Science Student · University of Lethbridge</span>
-                <h1>I build things that find<br>the shortest way through.</h1>
-                <p class="lede">Bachelor of Management in Computer Science (Co-op) student focused on algorithm design and systems &mdash; from graph search to IT infrastructure. Currently seeking an <strong>8&ndash;16 month internship starting May 2026.</strong></p>
-                <div class="btn-row">
-                    <a href="projects.html" class="btn btn-primary">View projects</a>
-                    <a href="mailto:ivanchengyouhe@gmail.com" class="btn">Get in touch</a>
+        <section style="padding-top: 8.5rem;">
+            <span class="eyebrow">education</span>
+            <h2>Education &amp; Certificates</h2>
+            <p class="lede" style="margin-bottom: 2.5rem;">Formal coursework and the certifications I've picked up along the way.</p>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <h3>University of Lethbridge</h3>
+                    <span class="item-date">Expected Apr 2028</span>
+                </div>
+                <p class="item-subtitle">Bachelor of Management in Computer Science (Co-operative Education)</p>
+                <p>Currently maintaining a <span class="metric">3.21</span> cumulative GPA.</p>
+                <img src="Images/University_Of_Lethbridge_Logo.png" alt="University of Lethbridge" class="logo-img">
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <h3>Google IT Support Specialization</h3>
+                    <span class="item-date">Jun 2025</span>
+                </div>
+                <p class="item-subtitle">Coursera</p>
+                <p>Completed comprehensive coursework covering networking, operating systems, system administration, and security fundamentals.</p>
+                <img src="Images/Google_IT_Support_Certificate.png" alt="Google IT Support Certificate" class="cert-img">
+            </div>
+
+            <!--
+              LinkedIn Learning certificates:
+              1. Save each certificate image into the /Images folder (e.g. Images/LinkedIn_Course_Name.png)
+              2. Copy the item-card block below for each certificate and update the title, date, and image path.
+            -->
+            <div class="item-card">
+                <div class="item-header">
+                    <h3>LinkedIn Learning Certificates</h3>
+                    <span class="item-date">2026</span>
+                </div>
+                <p class="item-subtitle">LinkedIn Learning</p>
+                <p>Drop your certificate images into the <code>Images</code> folder and swap them in below &mdash; duplicate this card for each one.</p>
+                <div class="cert-grid">
+                    <div class="cert-note">Certificate image goes here</div>
+                    <div class="cert-note">Certificate image goes here</div>
                 </div>
             </div>
 
-            <div class="hero-graphic" aria-hidden="true">
-                <svg viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg">
-                    <!-- exploration edges -->
-                    <line class="graph-edge" x1="40" y1="190" x2="130" y2="90"   style="animation-delay:0.00s"/>
-                    <line class="graph-edge" x1="40" y1="190" x2="130" y2="290"  style="animation-delay:0.06s"/>
-                    <line class="graph-edge" x1="130" y1="90"  x2="230" y2="40"  style="animation-delay:0.12s"/>
-                    <line class="graph-edge" x1="130" y1="90"  x2="230" y2="170" style="animation-delay:0.18s"/>
-                    <line class="graph-edge" x1="130" y1="290" x2="230" y2="170" style="animation-delay:0.24s"/>
-                    <line class="graph-edge" x1="130" y1="290" x2="230" y2="300" style="animation-delay:0.30s"/>
-                    <line class="graph-edge" x1="230" y1="40"  x2="330" y2="110" style="animation-delay:0.36s"/>
-                    <line class="graph-edge" x1="230" y1="170" x2="330" y2="110" style="animation-delay:0.42s"/>
-                    <line class="graph-edge" x1="230" y1="170" x2="330" y2="250" style="animation-delay:0.48s"/>
-                    <line class="graph-edge" x1="230" y1="300" x2="330" y2="250" style="animation-delay:0.54s"/>
-                    <line class="graph-edge" x1="330" y1="110" x2="430" y2="60"  style="animation-delay:0.60s"/>
-                    <line class="graph-edge" x1="330" y1="110" x2="430" y2="190" style="animation-delay:0.66s"/>
-                    <line class="graph-edge" x1="330" y1="250" x2="430" y2="190" style="animation-delay:0.72s"/>
-                    <line class="graph-edge" x1="330" y1="250" x2="430" y2="320" style="animation-delay:0.78s"/>
-                    <line class="graph-edge" x1="430" y1="60"  x2="500" y2="180" style="animation-delay:0.84s"/>
-                    <line class="graph-edge" x1="430" y1="190" x2="500" y2="180" style="animation-delay:0.90s"/>
-                    <line class="graph-edge" x1="430" y1="320" x2="500" y2="180" style="animation-delay:0.96s"/>
-
-                    <!-- shortest path, drawn again on top -->
-                    <line class="graph-edge path" x1="40" y1="190" x2="130" y2="90"   style="animation-delay:1.30s"/>
-                    <line class="graph-edge path" x1="130" y1="90"  x2="230" y2="170" style="animation-delay:1.45s"/>
-                    <line class="graph-edge path" x1="230" y1="170" x2="330" y2="110" style="animation-delay:1.60s"/>
-                    <line class="graph-edge path" x1="330" y1="110" x2="430" y2="190" style="animation-delay:1.75s"/>
-                    <line class="graph-edge path" x1="430" y1="190" x2="500" y2="180" style="animation-delay:1.90s"/>
-
-                    <!-- nodes -->
-                    <circle class="graph-node" cx="40" cy="190" r="6" style="animation-delay:0.00s"/>
-                    <circle class="graph-node" cx="130" cy="90" r="6" style="animation-delay:0.10s"/>
-                    <circle class="graph-node" cx="130" cy="290" r="6" style="animation-delay:0.14s"/>
-                    <circle class="graph-node" cx="230" cy="40" r="6" style="animation-delay:0.22s"/>
-                    <circle class="graph-node" cx="230" cy="170" r="6" style="animation-delay:0.26s"/>
-                    <circle class="graph-node" cx="230" cy="300" r="6" style="animation-delay:0.32s"/>
-                    <circle class="graph-node" cx="330" cy="110" r="6" style="animation-delay:0.40s"/>
-                    <circle class="graph-node" cx="330" cy="250" r="6" style="animation-delay:0.46s"/>
-                    <circle class="graph-node" cx="430" cy="60" r="6" style="animation-delay:0.58s"/>
-                    <circle class="graph-node" cx="430" cy="190" r="6" style="animation-delay:0.64s"/>
-                    <circle class="graph-node" cx="430" cy="320" r="6" style="animation-delay:0.70s"/>
-                    <circle class="graph-node" cx="500" cy="180" r="7" style="animation-delay:0.82s"/>
-
-                    <!-- path nodes highlighted on top -->
-                    <circle class="graph-node path" cx="40" cy="190" r="6" style="animation-delay:1.30s"/>
-                    <circle class="graph-node path" cx="130" cy="90" r="6" style="animation-delay:1.45s"/>
-                    <circle class="graph-node path" cx="230" cy="170" r="6" style="animation-delay:1.60s"/>
-                    <circle class="graph-node path" cx="330" cy="110" r="6" style="animation-delay:1.75s"/>
-                    <circle class="graph-node path" cx="430" cy="190" r="6" style="animation-delay:1.90s"/>
-                    <circle class="graph-node path" cx="500" cy="180" r="7" style="animation-delay:2.05s"/>
-
-                    <text class="graph-label" x="470" y="205" text-anchor="middle">target</text>
-                </svg>
-            </div>
-        </section>
-
-        <section id="about">
-            <span class="eyebrow">about</span>
-            <h2>Who I am</h2>
-            <div class="about-grid">
-                <div class="profile-img">
-                    <img src="Images/IvanHe.jpg" alt="Ivan He">
-                </div>
-                <div>
-                    <p>I'm a Computer Science student at the University of Lethbridge pursuing my Bachelor of Management in Computer Science. My academic focus bridges software development, algorithm design, and system optimization.</p>
-                    <p>My technical work spans multiple languages including C++, Python, and Java, alongside frontend tools like HTML/CSS. Outside of pure coding, I'm a passionate gamer with a strong interest in understanding the mechanics, logic, and development processes behind the games I play &mdash; it keeps pushing me to think harder about application logic and efficiency.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <span class="eyebrow">tech_stack</span>
-            <h2>What I work with</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>languages</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">C</span>
-                        <span class="tech-tag">C++</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>IT support &amp; infrastructure</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Windows Admin</span>
-                        <span class="tech-tag">PowerShell</span>
-                        <span class="tech-tag">Bash</span>
-                        <span class="tech-tag">Linux</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>web &amp; API</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">REST API</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>tools &amp; data</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Git</span>
-                        <span class="tech-tag">GitLab</span>
-                        <span class="tech-tag">VS Code</span>
-                        <span class="tech-tag">Jupyter</span>
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="explore">
-            <span class="eyebrow">explore</span>
-            <h2>Where to next</h2>
-            <div class="project-grid">
-                <a href="education.html" class="item-card" style="display:block;">
-                    <div class="item-header"><h3>Education &amp; Certificates</h3><span class="item-date">&rarr;</span></div>
-                    <p style="margin:0;">University of Lethbridge, Google IT Support, and LinkedIn Learning certificates.</p>
-                </a>
-                <a href="experience.html" class="item-card" style="display:block;">
-                    <div class="item-header"><h3>Experience</h3><span class="item-date">&rarr;</span></div>
-                    <p style="margin:0;">Roles where I've supported people and events on campus.</p>
-                </a>
-                <a href="projects.html" class="item-card" style="display:block;">
-                    <div class="item-header"><h3>Projects</h3><span class="item-date">&rarr;</span></div>
-                    <p style="margin:0;">Algorithm work and front-end builds, including the pathfinding project behind this page's animation.</p>
-                </a>
+            <div class="page-footer-nav">
+                <a href="index.html">&larr; home</a>
+                <a href="experience.html">experience &rarr;</a>
             </div>
         </section>
 
