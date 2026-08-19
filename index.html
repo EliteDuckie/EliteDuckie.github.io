@@ -13,7 +13,19 @@
    edges, and a shortest path run through the whole site)
    ========================================================= */
 
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+=======
+        /* Profile Photo CSS */
+        .about-grid { display: flex; gap: 3rem; align-items: flex-start; }
+        .profile-img-placeholder {
+            width: 180px; height: 180px; border-radius: 50%;
+            background-color: #1a1a1a; border: 2px dashed #444;
+            flex-shrink: 0; display: flex; justify-content: center; align-items: center;
+            color: #888; font-size: 0.9rem; overflow: hidden;
+        }
+        .profile-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+>>>>>>> 2bc8a57e22d0409c5f18002a5a01ed06a0de4a59
 
 :root{
   /* --- color tokens --- */
@@ -32,6 +44,7 @@
   --amber:         #F2A93B;   /* shortest path / primary accent */
   --amber-dim:     rgba(242, 169, 59, 0.14);
 
+<<<<<<< HEAD
   /* --- type tokens --- */
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
@@ -541,6 +554,23 @@ p{ line-height: 1.75; color: var(--text-muted); font-size: 0.98rem; margin: 0 0 
   .cert-grid{ grid-template-columns: 1fr; }
   .item-header{ flex-direction: column; align-items: flex-start; gap: 0.2rem; }
 }
+=======
+        /* Highlighted Tech Section Styling */
+        .skills-container { display: flex; flex-direction: column; gap: 1.5rem; }
+        .skill-category h3 { font-size: 0.95rem; color: #888; margin-bottom: 0.8rem; font-weight: 500; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        
+        .tech-tag { 
+            background: rgba(88, 166, 255, 0.1); 
+            padding: 0.4rem 1rem; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            color: #58a6ff; 
+            border: 1px solid rgba(88, 166, 255, 0.3); 
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+>>>>>>> 2bc8a57e22d0409c5f18002a5a01ed06a0de4a59
 
     </style>
 </head>
@@ -713,6 +743,62 @@ p{ line-height: 1.75; color: var(--text-muted); font-size: 0.98rem; margin: 0 0 
             </div>
         </section>
 
+<<<<<<< HEAD
+=======
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="item-card">
+                <div class="item-header">
+                    <h3>Career Fair Assistant</h3>
+                    <span class="item-date">Jan 2026</span>
+                </div>
+                <p class="item-subtitle">University of Lethbridge</p>
+                <p>Assisted in coordinating major university events, acting as a direct liaison between students, faculty, and visiting organizations. Managed event logistics, streamlined communication channels, and provided on-site technical and informational support to ensure seamless execution for hundreds of attendees.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="item-card">
+                <div class="item-header">
+                    <h3>PyTableTop Engine</h3>
+                    <span class="item-date">2026</span>
+                </div>
+                <p>Developed a modular tabletop game engine in Python, creating scalable simulations for classic games including Blackjack and Uno. Leveraged AI-assisted development tools to rapidly prototype game logic, debug mathematical models, and optimize object-oriented architecture.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OOP</span>
+                    <span class="tech-tag">AI-Assisted Dev</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <h3>Pathfinding Optimization</h3>
+                    <span class="item-date">2025</span>
+                </div>
+                <p>Engineered a Bidirectional Dijkstra’s Algorithm in C++ that achieved a <strong>78x speed increase</strong> over the base model. Designed memory-efficient data structures and rigorously optimized execution time to handle large-scale mathematical routing and complex map datasets.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Algorithm Design</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-header">
+                    <h3>Responsive Online Gallery</h3>
+                    <span class="item-date">2023</span>
+                </div>
+                <p>Developed a front-end gallery website focusing on modern aesthetic principles and fluid user experiences. Utilized semantic HTML and flexible CSS grid layouts to ensure complete cross-browser compatibility and responsive scaling across mobile, tablet, and desktop devices.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                </div>
+            </div>
+        </section>
+        
+>>>>>>> 2bc8a57e22d0409c5f18002a5a01ed06a0de4a59
     </main>
 
     <footer class="site-footer">
