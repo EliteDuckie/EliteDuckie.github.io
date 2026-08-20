@@ -8,21 +8,21 @@ This repository contains the source code for my personal portfolio website, host
 ---
 
 ## 💻 Project Overview
-This project is a modern, responsive single-page portfolio designed to showcase my academic background, technical skills, and software projects. 
+This project is a modern, responsive portfolio designed to showcase my academic background, technical skills, and software architecture.
 
 ### Key Features:
-*   **Dark Mode Aesthetic:** A clean, high-contrast interface for better readability.
-*   **Responsive Design:** Fully optimized for viewing on desktops, tablets, and mobile devices.
-*   **Smooth Navigation:** Top-bar navigation with smooth-scroll anchors for easy access to sections.
-*   **Visual Documentation:** Includes sections for verified credentials and project screenshots.
+*   **Dark Mode Aesthetic:** A clean, high-contrast interface leveraging CSS Variables and Grid.
+*   **Interactive Design:** Features a global, cursor-tracking radial glow overlay utilizing vanilla JavaScript.
+*   **Highlighted Project Focus:** Dedicated documentation of the **PyTabletop Engine**, demonstrating object-oriented game logic, abstract base class enforcement, and headless simulation environments directly implemented in Python.
 
 ## 🛠️ Built With
-*   **HTML5:** Semantic structure for the content.
-*   **CSS3:** Custom styling including Flexbox layouts, animations, and frosted-glass navigation effects.
+*   **HTML5 & CSS3:** Semantic structure and custom styling.
+*   **JavaScript:** DOM manipulation and event tracking.
 *   **GitHub Pages:** Automated deployment and hosting.
 
 ---
 
 ## 📫 Contact
 *   **LinkedIn:** [https://www.linkedin.com/in/ivan-cheng-you-he/](https://www.linkedin.com/in/ivan-cheng-you-he/)
+*   **Email:** ivanchengyouhe@gmail.com
 *   **GitHub:** [@EliteDuckie](https://github.com/EliteDuckie)
