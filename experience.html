@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education | Ivan He</title>
+    <title>Experience | Ivan He</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
@@ -256,6 +256,91 @@ p{ line-height: 1.75; color: var(--text-muted, #8A96AF); font-size: 0.98rem; mar
 }
 
 /* =========================================================
+   Hero (index page)
+   ========================================================= */
+.hero{
+  position: relative;
+  padding-top: 9rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  min-height: 78vh;
+  overflow: hidden;
+}
+.hero::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(500px circle at var(--x, 70%) var(--y, 30%), rgba(53,208,192,0.10), transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.3s ease;
+}
+.hero-copy, .hero-graphic{ position: relative; z-index: 1; }
+.hero-copy .role{
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: var(--amber, #F2A93B);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.hero-graphic{ width: 100%; }
+.hero-graphic svg{ width: 100%; height: auto; display: block; }
+
+/* graph animation */
+.graph-edge{
+  fill: none;
+  stroke: var(--teal, #35D0C0);
+  stroke-width: 2;
+  opacity: 0.28;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  animation: draw 0.6s ease forwards;
+}
+.graph-edge.path{
+  stroke: var(--amber, #F2A93B);
+  opacity: 0;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 4px rgba(242,169,59,0.6));
+  animation: draw-path 0.6s ease forwards;
+}
+.graph-node{
+  fill: var(--bg-panel-alt, #16223A);
+  stroke: var(--teal, #35D0C0);
+  stroke-width: 1.5;
+  opacity: 0;
+  animation: pop 0.4s ease forwards;
+}
+.graph-node.path{
+  fill: var(--amber, #F2A93B);
+  stroke: var(--amber, #F2A93B);
+  animation: pop-path 0.4s ease forwards;
+}
+.graph-label{
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 9px;
+  fill: var(--text-dim, #5B6577);
+  opacity: 0;
+  animation: fade-in 0.6s ease forwards;
+  animation-delay: 2.2s;
+}
+
+@keyframes draw{ to{ stroke-dashoffset: 0; } }
+@keyframes draw-path{ to{ stroke-dashoffset: 0; opacity: 1; } }
+@keyframes pop{ to{ opacity: 1; } }
+@keyframes pop-path{ to{ opacity: 1; transform: scale(1.15); } }
+@keyframes fade-in{ to{ opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce){
+  .graph-edge, .graph-edge.path, .graph-node, .graph-node.path, .graph-label{
+    animation: none !important;
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/* =========================================================
    Scroll reveal
    ========================================================= */
 .reveal{
@@ -281,6 +366,51 @@ p{ line-height: 1.75; color: var(--text-muted, #8A96AF); font-size: 0.98rem; mar
   .reveal-stagger.in-view .item-card,
   .reveal-stagger.in-view .tech-tag,
   .reveal-stagger.in-view .project-card{ animation: none; }
+}
+
+/* =========================================================
+   About grid
+   ========================================================= */
+.about-grid{ display: flex; gap: 2.5rem; align-items: flex-start; }
+.profile-img{
+  width: 168px; height: 168px; border-radius: 50%;
+  background: var(--bg-panel, #111A2C);
+  border: 2px solid var(--line-strong, rgba(232,236,245,0.16));
+  flex-shrink: 0; overflow: hidden;
+  position: relative;
+}
+.profile-img::after{
+  content: '';
+  position: absolute; inset: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--teal, #35D0C0);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.profile-img:hover::after{ opacity: 1; }
+.profile-img img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* =========================================================
+   Tech stack
+   ========================================================= */
+.skills-container{ display: flex; flex-direction: column; gap: 1.75rem; }
+.skill-category h3{ font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.85rem; color: var(--text-muted, #8A96AF); font-weight: 500; margin-bottom: 0.9rem; text-transform: lowercase; }
+.tech-tags{ display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.tech-tag{
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  background: var(--teal-dim, rgba(53,208,192,0.14));
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: var(--teal, #35D0C0);
+  border: 1px solid rgba(53, 208, 192, 0.28);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.tech-tag:hover{
+  background: var(--teal, #35D0C0);
+  color: var(--bg, #0B1220);
+  transform: translateY(-2px) rotate(-1.5deg);
 }
 
 /* =========================================================
@@ -325,6 +455,28 @@ p{ line-height: 1.75; color: var(--text-muted, #8A96AF); font-size: 0.98rem; mar
   color: var(--amber, #F2A93B);
   font-weight: 600;
 }
+
+/* certificate grid on education page */
+.cert-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
+.cert-grid .cert-img{ margin-top: 0; }
+.cert-note{
+  border: 1px dashed var(--line-strong, rgba(232,236,245,0.16));
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-dim, #5B6577);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   Project cards (grid page)
+   ========================================================= */
+.project-grid{ display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.project-card{ padding: 2rem; }
+.project-card .metric-row{ display: flex; gap: 2rem; margin: 1rem 0 1.25rem; flex-wrap: wrap; }
+.metric-block .metric-value{ font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 1.6rem; color: var(--amber, #F2A93B); font-weight: 600; display: block; }
+.metric-block .metric-label{ font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 0.72rem; color: var(--text-dim, #5B6577); text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* =========================================================
    Footer
@@ -379,6 +531,8 @@ p{ line-height: 1.75; color: var(--text-muted, #8A96AF); font-size: 0.98rem; mar
   .social-links{ margin-top: 1rem; gap: 0.6rem; }
 
   .main-content{ padding: 0 1.25rem 4rem; }
+  .about-grid{ flex-direction: column; align-items: flex-start; }
+  .cert-grid{ grid-template-columns: 1fr; }
   .item-header{ flex-direction: column; align-items: flex-start; gap: 0.2rem; }
 }
 
@@ -395,8 +549,8 @@ p{ line-height: 1.75; color: var(--text-muted, #8A96AF); font-size: 0.98rem; mar
         <div class="nav-container">
             <nav class="nav">
                 <a href="index.html">home</a>
-                <a href="education.html" class="active">education</a>
-                <a href="experience.html">experience</a>
+                <a href="education.html">education</a>
+                <a href="experience.html" class="active">experience</a>
                 <a href="projects.html">projects</a>
             </nav>
             <div class="social-links">
@@ -410,74 +564,22 @@ p{ line-height: 1.75; color: var(--text-muted, #8A96AF); font-size: 0.98rem; mar
     <main class="main-content">
 
         <section style="padding-top: 8.5rem;">
-            <span class="eyebrow">education</span>
-            <h2>Education &amp; Certificates</h2>
-            <p class="lede" style="margin-bottom: 2.5rem;">Formal coursework and the certifications I've picked up along the way.</p>
+            <span class="eyebrow">experience</span>
+            <h2>Where I've worked</h2>
+            <p class="lede" style="margin-bottom: 2.5rem;">Roles where I've supported people, events, and systems on campus.</p>
 
             <div class="item-card">
                 <div class="item-header">
-                    <h3>University of Lethbridge</h3>
-                    <span class="item-date">Expected Apr 2028</span>
+                    <h3>Career Fair Assistant</h3>
+                    <span class="item-date">Jan 2026</span>
                 </div>
-                <p class="item-subtitle">Bachelor of Management in Computer Science (Co-operative Education)</p>
-                <p>Currently maintaining a <span class="metric">3.21</span> cumulative GPA.</p>
-                <img src="Images/University_Of_Lethbridge_Logo.png" alt="University of Lethbridge" class="logo-img">
-            </div>
-
-            <div class="item-card">
-                <div class="item-header">
-                    <h3>Google IT Support Specialization</h3>
-                    <span class="item-date">Jun 2025</span>
-                </div>
-                <p class="item-subtitle">Coursera</p>
-                <p>Completed comprehensive coursework covering networking, operating systems, system administration, and security fundamentals.</p>
-                <img src="Images/Google_IT_Support_Certificate.png" alt="Google IT Support Certificate" class="cert-img">
-            </div>
-
-            <!-- New LinkedIn Certificates -->
-            <div class="item-card">
-                <div class="item-header">
-                    <h3>Career Essentials in Generative AI</h3>
-                    <span class="item-date">Aug 2026</span>
-                </div>
-                <p class="item-subtitle">Microsoft &middot; LinkedIn Learning</p>
-                <p>Focused on leveraging generative AI tools securely, encompassing core topics like Microsoft Copilot and Responsible AI.</p>
-                <img src="Images/CertificateOfCompletion_Career Essentials in Generative AI by Microsoft and LinkedIn.jpg" alt="Career Essentials in Generative AI Certificate" class="cert-img">
-            </div>
-
-            <div class="item-card">
-                <div class="item-header">
-                    <h3>Microsoft Azure AI Essentials</h3>
-                    <span class="item-date">Aug 2026</span>
-                </div>
-                <p class="item-subtitle">Microsoft &middot; LinkedIn Learning</p>
-                <p>Developed skills across Machine Learning, Azure AI Studio, and foundational Generative AI implementations in cloud environments.</p>
-                <img src="Images/CertificateOfCompletion_Microsoft Azure AI Essentials Professional Certificate by Microsoft and LinkedIn.jpg" alt="Microsoft Azure AI Essentials Certificate" class="cert-img">
-            </div>
-
-            <div class="item-card">
-                <div class="item-header">
-                    <h3>Microsoft Security Essentials</h3>
-                    <span class="item-date">Aug 2026</span>
-                </div>
-                <p class="item-subtitle">Microsoft &middot; LinkedIn Learning</p>
-                <p>Comprehensive path concentrating on overarching Microsoft Security protocols, Governance, Risk Management, and Compliance (GRC), as well as Cloud Security.</p>
-                <img src="Images/CertificateOfCompletion_Microsoft Security Essentials Professional Certificate by Microsoft and LinkedIn.jpg" alt="Microsoft Security Essentials Certificate" class="cert-img">
-            </div>
-
-            <div class="item-card">
-                <div class="item-header">
-                    <h3>Build Your Generative AI Productivity Skills</h3>
-                    <span class="item-date">Aug 2026</span>
-                </div>
-                <p class="item-subtitle">Microsoft &middot; LinkedIn Learning</p>
-                <p>Covered core competencies for integrating AI into workflows, specifically targeting AI for Business and AI Productivity enhancements.</p>
-                <img src="Images/CertificateOfCompletion_Build Your Generative AI Productivity Skills with Microsoft and LinkedIn.jpg" alt="Build Your Generative AI Productivity Skills Certificate" class="cert-img">
+                <p class="item-subtitle">University of Lethbridge</p>
+                <p>Assisted in coordinating major university events, acting as a direct liaison between students, faculty, and visiting organizations. Managed event logistics, streamlined communication channels, and provided on-site technical and informational support to ensure seamless execution for hundreds of attendees.</p>
             </div>
 
             <div class="page-footer-nav">
-                <a href="index.html">&larr; home</a>
-                <a href="experience.html">experience &rarr;</a>
+                <a href="education.html">&larr; education</a>
+                <a href="projects.html">projects &rarr;</a>
             </div>
         </section>
 
